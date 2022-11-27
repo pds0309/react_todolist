@@ -8,7 +8,7 @@
 
 - [x] 기본 레이아웃, 스타일을 구성
 - [x] Header section 구성
-- [ ] TODOLIST 페이지, 상태를 구성
+- [x] TODOLIST 페이지, 상태를 구성
 
 <br>
 
