@@ -14,8 +14,8 @@
 
 **TODO를 등록할 수 있다.**
 
-- [ ] todo `title`, `content`를 입력받아 TODO를 생성할 form section component를 구성
-- [ ] todo 등록 시 `진행중` 목록에 보여질 수 있다.
+- [x] todo `title`, `content`를 입력받아 TODO를 생성할 form section component를 구성
+- [x] todo 등록 기능 추가 : todo 등록 시 `진행중` 상태가 된다.
 
 <br>
 
