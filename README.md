@@ -21,7 +21,8 @@
 
 **TODO목록이 보여진다.**
 
-- [ ] `todo_card` , `todo_cardlist` 컴포넌트를 구성
+- [x] `todo_cardlist` 컴포넌트를 구성
+- [ ] `todo_card` 컴포넌트를 구성
 - [ ] `완료`, `진행중` 목록으로 보여질 수 있다.
 
 <br>
