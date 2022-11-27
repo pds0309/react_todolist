@@ -1,9 +1,9 @@
-import Section from './layouts/Section';
+import Header from './components/Header';
 
 function App() {
   return (
     <div>
-      <Section>hello</Section>
+      <Header />
     </div>
   );
 }
