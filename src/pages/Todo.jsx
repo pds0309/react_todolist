@@ -21,6 +21,19 @@ const Todo = () => {
     setTodos(todos.filter(todo => todo.id !== id));
   };
 
+  const genTodos = done => {
+    return todos
+      ?.filter(raw => raw.done === done)
+      .map(todo => (
+        <TodoCard
+          key={todo.id}
+          {...todo}
+          updateTodo={() => updateTodo(todo.id)}
+          deleteTodo={() => deleteTodo(todo.id)}
+        />
+      ));
+  };
+
   useEffect(() => {
     SampleTodos.forEach((todo, idx) => setTodos(prev => prev.concat({ ...todo, id: idx })));
   }, []);
@@ -31,30 +44,8 @@ const Todo = () => {
         <TodoForm addTodo={addTodo} />
       </Section>
       <Section>
-        <TodoList listTitle="Working... 🔥">
-          {todos
-            ?.filter(raw => !raw.done)
-            .map(todo => (
-              <TodoCard
-                key={todo.id}
-                {...todo}
-                updateTodo={() => updateTodo(todo.id)}
-                deleteTodo={() => deleteTodo(todo.id)}
-              />
-            ))}
-        </TodoList>
-        <TodoList listTitle="Done..! 🎉">
-          {todos
-            ?.filter(raw => raw.done)
-            .map(todo => (
-              <TodoCard
-                key={todo.id}
-                {...todo}
-                updateTodo={() => updateTodo(todo.id)}
-                deleteTodo={() => deleteTodo(todo.id)}
-              />
-            ))}
-        </TodoList>
+        <TodoList listTitle="Working... 🔥">{genTodos(false)}</TodoList>
+        <TodoList listTitle="Done..! 🎉">{genTodos(true)}</TodoList>
       </Section>
     </>
   );
