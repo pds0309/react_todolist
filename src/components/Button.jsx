@@ -15,7 +15,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   btnType: PropTypes.oneOf(['primary', 'secondary']),
   btnColor: PropTypes.oneOf(['brand', 'warning', 'success']),
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
