@@ -2,6 +2,15 @@
 
 <br>
 
+### 목표
+
+- todo를 등록
+- todo 목록을 상태별(진행중, 완료)로 조회
+- todo 상태(진행중, 완료)를 수정
+- todo를 삭제
+
+<br>
+
 ### Assignment Checklist
 
 **기본적인 구성**
@@ -30,10 +39,14 @@
 **TODO 상태를 변경, 삭제할 수 있다.**
 
 - [x] `todo_card`가 `진행중` 또는 `완료` 상태로 변경될 수 있다: `todo_card` `완료` 버튼을 위한 기능을 구현
-- [ ] 삭제 시 `todo_cardlist`에서 삭제되어야 한다: `todo_card` `삭제` 버튼을 위한 기능을 구현
+- [x] 삭제 시 `todo_cardlist`에서 삭제되어야 한다: `todo_card` `삭제` 버튼을 위한 기능을 구현
 
 <br>
 
 ### etc
 
-- [ ] `proptypes`를 사용해 `type-safe`하게 구성하라
+- [x] `proptypes`를 사용해 `type-safe`하게 구성하라
+
+```javascript
+    'react/prop-types': 'error',
+```
