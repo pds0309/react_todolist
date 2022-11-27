@@ -6,7 +6,7 @@ const Todo = () => {
   const [todos, setTodos] = useState([]);
   console.log(todos);
   const addTodo = ({ title, contents }) => {
-    setTodos(prev => prev.concat({ id: prev.length + 1, title, contents, status: 'progress' }));
+    setTodos(prev => prev.concat({ id: prev.length + 1, title, contents, done: false }));
   };
   return (
     <>
