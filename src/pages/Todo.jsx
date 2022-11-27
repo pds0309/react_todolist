@@ -12,7 +12,10 @@ const Todo = () => {
   const addTodo = ({ title, contents }) => {
     setTodos(prev => prev.concat({ id: prev.length + 1, title, contents, done: false }));
   };
-  //TODO: update 기능 추가
+
+  const updateTodo = id => {
+    setTodos(todos.map(todo => (todo.id === id ? { ...todo, done: !todo.done } : todo)));
+  };
   //TODO: delete 기능 추가
 
   useEffect(() => {
@@ -29,14 +32,14 @@ const Todo = () => {
           {todos
             ?.filter(raw => !raw.done)
             .map(todo => (
-              <TodoCard key={todo.id} {...todo} />
+              <TodoCard key={todo.id} {...todo} updateTodo={() => updateTodo(todo.id)} />
             ))}
         </TodoList>
         <TodoList listTitle="Done..! 🎉">
           {todos
             ?.filter(raw => raw.done)
             .map(todo => (
-              <TodoCard key={todo.id} {...todo} />
+              <TodoCard key={todo.id} {...todo} updateTodo={() => updateTodo(todo.id)} />
             ))}
         </TodoList>
       </Section>
