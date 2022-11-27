@@ -4,12 +4,11 @@
 
 ### Assignment Checklist
 
-**기본적인 UI를 구성**
+**기본적인 구성**
 
 - [x] 기본 레이아웃, 스타일을 구성
 - [x] Header section 구성
-- [ ] 재사용할 컴포넌트를 구성
-- [ ] TODOLIST 페이지를 구성
+- [ ] TODOLIST 페이지, 상태를 구성
 
 <br>
 
