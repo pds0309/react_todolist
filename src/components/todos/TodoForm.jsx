@@ -24,7 +24,7 @@ const TodoForm = ({ addTodo }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    if (!inputTitle && !inputContents) {
+    if (!inputTitle || !inputContents) {
       alert('제목 또는 내용을 입력하세요');
       return;
     }
