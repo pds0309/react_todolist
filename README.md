@@ -43,6 +43,17 @@
 
 <br>
 
+**Redux 적용하기**
+
+- [x] 기존 todo `state` `props`를 리덕스 전역 상태 관리로 리팩터링
+
+<br>
+
+**routing, details Page**
+
+- [ ] `todoDetail` 페이지를 구성
+- [ ] routing 적용 - 카드를 클릭해 페이지로 이동할 수 있다.
+
 ### etc
 
 - [x] `proptypes`를 사용해 `type-safe`하게 구성하라
