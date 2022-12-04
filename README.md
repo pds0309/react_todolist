@@ -51,8 +51,7 @@
 
 **routing, details Page**
 
-- [ ] `todoDetail` 페이지를 구성
-- [ ] routing 적용 - 카드를 클릭해 페이지로 이동할 수 있다.
+- [x] `todoDetail` 페이지를 구성하고 routing적용 - 카드 클릭 시 이동
 
 ### etc
 
