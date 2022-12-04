@@ -1,20 +1,29 @@
 import PropTypes from 'prop-types';
+import TodoCard from './TodoCard';
 import styled from '@emotion/styled';
+import { useSelector } from 'react-redux';
 
-const TodoList = ({ listTitle, children }) => {
+const TodoList = ({ listTitle, done }) => {
+  const { todos } = useSelector(state => state.todo);
   return (
     <div>
       <div style={{ paddingLeft: '16px' }}>
         <h3>{listTitle}</h3>
       </div>
-      <CardsContainer>{children}</CardsContainer>
+      <CardsContainer>
+        {todos
+          ?.filter(todo => todo.done === done)
+          .map(filtered => (
+            <TodoCard key={filtered.id} {...filtered} />
+          ))}
+      </CardsContainer>
     </div>
   );
 };
 
 TodoList.propTypes = {
   listTitle: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired,
+  done: PropTypes.bool.isRequired,
 };
 
 const CardsContainer = styled.div`
