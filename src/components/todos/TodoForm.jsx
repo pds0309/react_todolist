@@ -1,13 +1,15 @@
 import { Border, Media } from '../../styles';
 
 import Button from '../Button';
-import PropTypes from 'prop-types';
+import { add } from '../../redux/todo';
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
-const TodoForm = ({ addTodo }) => {
+const TodoForm = () => {
   const [inputTitle, setInputTitle] = useState('');
   const [inputContents, setInputContents] = useState('');
+  const todoDispatch = useDispatch();
 
   const handleInputTitleChange = event => {
     setInputTitle(event.target.value);
@@ -28,7 +30,7 @@ const TodoForm = ({ addTodo }) => {
       alert('제목 또는 내용을 입력하세요');
       return;
     }
-    addTodo({ title: inputTitle, contents: inputContents });
+    todoDispatch(add({ title: inputTitle, contents: inputContents }));
     clearInputs();
   };
 
@@ -62,10 +64,6 @@ const TodoForm = ({ addTodo }) => {
       </form>
     </FormBlock>
   );
-};
-
-TodoForm.propTypes = {
-  addTodo: PropTypes.func.isRequired,
 };
 
 const FormBlock = styled.div`

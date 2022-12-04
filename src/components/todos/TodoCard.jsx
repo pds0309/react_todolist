@@ -1,10 +1,13 @@
 import { Border, Media } from '../../styles';
+import { remove, update } from '../../redux/todo';
 
 import Button from '../Button';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
+import { useDispatch } from 'react-redux';
 
-const TodoCard = ({ title, contents, done, updateTodo, deleteTodo }) => {
+const TodoCard = ({ id, title, contents, done }) => {
+  const todoDispatch = useDispatch();
   return (
     <StyledCard>
       <TitleHeader>{title}</TitleHeader>
@@ -12,10 +15,10 @@ const TodoCard = ({ title, contents, done, updateTodo, deleteTodo }) => {
         <ContentParagraph>{contents}</ContentParagraph>
       </div>
       <HalfButtonContainer>
-        <Button onClick={updateTodo} btnType="secondary" btnColor="success">
+        <Button onClick={() => todoDispatch(update(id))} btnType="secondary" btnColor="success">
           {done ? '취소' : '완료'}
         </Button>
-        <Button onClick={deleteTodo} btnType="secondary" btnColor="warning">
+        <Button onClick={() => todoDispatch(remove(id))} btnType="secondary" btnColor="warning">
           삭제하기
         </Button>
       </HalfButtonContainer>
@@ -24,11 +27,10 @@ const TodoCard = ({ title, contents, done, updateTodo, deleteTodo }) => {
 };
 
 TodoCard.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   contents: PropTypes.string.isRequired,
   done: PropTypes.bool.isRequired,
-  updateTodo: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
 };
 
 const StyledCard = styled.div`
