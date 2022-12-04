@@ -11,9 +11,9 @@ const TodoCard = ({ id, title, contents, done }) => {
   const todoDispatch = useDispatch();
   return (
     <StyledCard>
-      <Link to={`/${id}`} state={{ title, contents }}>
+      <DetailLink to={`/${id}`} state={{ title, contents }}>
         상세보기
-      </Link>
+      </DetailLink>
       <TitleHeader>{title}</TitleHeader>
       <div style={{ minHeight: '80px' }}>
         <ContentParagraph>{contents}</ContentParagraph>
@@ -38,7 +38,7 @@ TodoCard.propTypes = {
 };
 
 const StyledCard = styled.div`
-  padding: 0 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   width: 300px;
   @media ${Media.mobile_lg} {
     width: 250px;
@@ -66,6 +66,15 @@ const TitleHeader = styled.h3`
 const ContentParagraph = styled.p`
   overflow: auto;
   height: 80px;
+`;
+
+const DetailLink = styled(Link)`
+  color: gray;
+  text-decoration: none;
+
+  :hover {
+    opacity: 0.7;
+  }
 `;
 
 export default TodoCard;
