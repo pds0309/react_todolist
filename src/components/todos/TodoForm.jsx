@@ -110,6 +110,9 @@ const Input = styled.input`
   border: 1px solid;
   min-height: 38px;
   min-width: 240px;
+  @media ${Media.mobile_lg} {
+    min-width: auto;
+  }
 `;
 
 export default TodoForm;

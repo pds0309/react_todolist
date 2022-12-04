@@ -1,4 +1,5 @@
-import { Border } from '../../styles';
+import { Border, Media } from '../../styles';
+
 import Button from '../Button';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
@@ -32,8 +33,10 @@ TodoCard.propTypes = {
 
 const StyledCard = styled.div`
   padding: 0 20px 20px 20px;
-  max-width: 300px;
-  min-width: 300px;
+  width: 300px;
+  @media ${Media.mobile_lg} {
+    width: 250px;
+  }
   border-radius: ${Border.containerRadius};
   box-shadow: 0 0 5px 1px rgba(253, 126, 64, 0.5);
 `;
