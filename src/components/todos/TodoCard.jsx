@@ -2,6 +2,7 @@ import { Border, Media } from '../../styles';
 import { remove, update } from '../../redux/todo';
 
 import Button from '../Button';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { useDispatch } from 'react-redux';
@@ -10,6 +11,9 @@ const TodoCard = ({ id, title, contents, done }) => {
   const todoDispatch = useDispatch();
   return (
     <StyledCard>
+      <Link to={`/${id}`} state={{ title, contents }}>
+        상세보기
+      </Link>
       <TitleHeader>{title}</TitleHeader>
       <div style={{ minHeight: '80px' }}>
         <ContentParagraph>{contents}</ContentParagraph>
