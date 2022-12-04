@@ -1,12 +1,14 @@
 import Header from './components/Header';
+import { Provider } from 'react-redux';
 import Todo from './pages/Todo';
+import store from './redux/config/store';
 
 function App() {
   return (
-    <div>
+    <Provider store={store}>
       <Header />
       <Todo />
-    </div>
+    </Provider>
   );
 }
 
