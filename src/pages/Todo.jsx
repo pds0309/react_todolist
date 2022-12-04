@@ -26,7 +26,7 @@ const Todo = () => {
       ?.filter(raw => raw.done === done)
       .map(todo => (
         <TodoCard
-          key={todo.id}
+          key={Date.now() + todo.id}
           {...todo}
           updateTodo={() => updateTodo(todo.id)}
           deleteTodo={() => deleteTodo(todo.id)}
