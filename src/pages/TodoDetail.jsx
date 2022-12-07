@@ -10,9 +10,14 @@ const TodoDetail = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const handlePrevButtonClick = () => {
+  if (!state) {
     navigate('/');
+  }
+
+  const handlePrevButtonClick = () => {
+    navigate(-1);
   };
+
   return (
     <Section>
       <TodoDetailBox>
